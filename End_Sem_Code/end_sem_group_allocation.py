@@ -31,7 +31,6 @@ def branch_seperator(student_roll_list , student_name , student_id, total_branch
 def group_allocation(total_branch, number_of_groups):
     total_branch = list(dict.fromkeys(total_branch))
     branchwise_left_students = list()
-    print(number_of_groups)
     for i in total_branch:
        file_name = i + ".csv"
        temp_df = pd.read_csv(file_name)
@@ -74,12 +73,10 @@ def group_allocation(total_branch, number_of_groups):
             cnt += 1
 
 
-
-
-
-
-
+# Input Data File
 filename = "Btech_2020_master_data.csv"
+
+# Creating a Dataframe From The Master File
 df = pd.read_csv(filename)
 student_roll_list = list()  # Roll number list of students
 student_name = list()       # Name List of Students

@@ -11,7 +11,7 @@ def mean(first_list):
        for i in range(0, len(first_list)):
           mean_value = mean_value+first_list[i]
           mean_value = mean_value/p
-   error:
+   except:
      mean_value = 0
 
    return mean_value
@@ -89,7 +89,7 @@ def rmse(first_list, second_list):
     total = 0
     if n > 0:
       for i in range(0, n):
-        x = (first_list[i]-second_list[i])
+        x = (int(first_list[i])-int(second_list[i]))
         x = x**2
         total = total+x
       rmse_value = total/n
@@ -147,7 +147,7 @@ def nse(first_list, second_list):
 def pcc(first_list, second_list):
     return 1
 
-"""
+
 # Function to compute Pearson correlation coefficient.
 def pcc(first_list, second_list):
     n = len(first_list)
@@ -165,10 +165,10 @@ def pcc(first_list, second_list):
             for i in range(0, n):
                 total = total + (second_list[i] - m2)
             pcc_value = (total)/(d2*(math.sqrt(n))
-        elif d2 == 0 and d1 > 0:
-            for i in range(0, n):
-                total=total + (first_list[i] - m1)
-            pcc_value=(total)/(d1*(math.sqrt(n)))
+       # elif int(d2) == 0 and d1 > 0:
+        #
+        #       total=total + (first_list[i] - m1)
+         #   pcc_value=(total)/(d1*(math.sqrt(n)))
         else:
             for i in range(0, n):
                 total=(first_list[i] - m1)
@@ -181,7 +181,7 @@ def pcc(first_list, second_list):
 
     return pcc_value
 
-"""
+
 
 # Function to compute Skewness.
 def skewness(first_list):
